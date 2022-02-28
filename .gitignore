@@ -1,0 +1,7 @@
+venv/
+*.log
+*.py[cod]
+.idea
+*.iml
+*.jpg
+*.png
