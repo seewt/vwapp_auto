@@ -17,7 +17,8 @@ def get_sentence():
     pic_src = requests.request('get',pic_url).content
     with open(pic_path,'wb') as f:
         f.write(pic_src)
-    os.popen(r'adb push D:\auto_task\excute_image\pic.png /sdcard/Pictures')
+    # os.popen(r'adb push D:\auto_task\excute_image\pic.png /sdcard/Pictures')
+    os.popen("adb push"+os.path.abspath(os.path.dirname(os.getcwd()))+"\\excute_image\\pic.png "+ "/sdcard/Pictures")
     # logger.info(cmd_res.read())
     # print(os.system(r'adb push D:\auto_task\excute_image\pic.png /sdcard/Pictures'))
     return sentence

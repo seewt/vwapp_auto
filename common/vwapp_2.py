@@ -2,7 +2,7 @@ import datetime
 from random import randint
 from logconf import logger
 import uiautomator2 as u2
-import time
+import time,os
 import adbutils
 from monitor_Util import window_Monitor
 from content_Util import get_content
@@ -77,7 +77,7 @@ class autoScore:
             self.d(resourceId="com.timanetworks.android.faw.vw.aftermarket.release:id/action_bar_back_icon").click()
             self.mypage()
             task1, task3,task1_no= self.get_task()
-        image = "D:\\auto_task\\excute_image\\1.jpg"
+        image = os.path.abspath(os.path.dirname(os.getcwd()))+"\\excute_image\\1.jpg"
         self.d(text='日常任务').wait()
         self.d.screenshot(image)
         mp.send_mail(image)
